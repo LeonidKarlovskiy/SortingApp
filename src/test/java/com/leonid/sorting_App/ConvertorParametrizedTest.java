@@ -6,13 +6,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+
 import java.util.Arrays;
 import java.util.Collection;
 
 
 @RunWith(Parameterized.class)
 public class ConvertorParametrizedTest {
-
     private static Sorter sorter;
     private final String[] inputArgs;
     private final int[] expected;
@@ -27,8 +27,6 @@ public class ConvertorParametrizedTest {
         this.inputArgs = inputArgs;
         this.expected = expected;
     }
-
-
 
     @Parameterized.Parameters
     public static Collection<Object> data() {

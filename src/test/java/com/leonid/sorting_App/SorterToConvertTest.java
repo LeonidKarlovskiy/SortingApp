@@ -6,18 +6,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class SorterToConvertTest {
-
-
-
     private static Sorter sorter;
-
 
     @BeforeClass
     public static void setUp() {
         sorter = new Sorter();
 
     }
-
 
     @Test(expected = IllegalArgumentException.class)
     public void noElementsCaseInConvertMethod() {

@@ -11,8 +11,7 @@ import java.util.Collection;
 
 
 @RunWith(Parameterized.class)
-
-public class SortedParametrizedTest {
+public class ConvertorParametrizedTest {
 
     private static Sorter sorter;
     private final String[] inputArgs;
@@ -24,7 +23,7 @@ public class SortedParametrizedTest {
 
     }
 
-    public SortedParametrizedTest(String[] inputArgs, int[] expected) {
+    public ConvertorParametrizedTest(String[] inputArgs, int[] expected) {
         this.inputArgs = inputArgs;
         this.expected = expected;
     }
@@ -48,7 +47,7 @@ public class SortedParametrizedTest {
     }
 
     @Test
-    public void testPrimeNumberChecker() {
+    public void stringMassiveConvertToIntMassiveCaseTest() {
         Assert.assertArrayEquals(expected, sorter.convert(inputArgs));
     }
 }

@@ -5,9 +5,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class SorterTest {
-
-
+public class SorterToSortTest {
 
     private static Sorter sorter;
 
@@ -19,24 +17,25 @@ public class SorterTest {
     }
 
 
+
     @Test(expected = IllegalArgumentException.class)
-    public void noElementsCaseInConvertMethod() {
-        String[] args = {};
-        sorter.convert(args);
+    public void noElementsCaseInSortMethod() {
+        int[] args = {};
+        sorter.sort(args);
     }
 
     @Test
     public void oneElementsCaseInConvertMethod() {
-        String[] args = {"1"};
+        int[] args = {1};
         int[] expectedArgs = {1};
-        int[] result = sorter.convert(args);
+        int[] result = sorter.sort(args);
         Assert.assertArrayEquals(expectedArgs, result);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void moreThenTenDigitsCaseInConvertMethod() {
-        String[] args = {"1", "24", "21", "43", "12", "65", "34", "6", "23", "2", "765", "34"};
-        sorter.convert(args);
+        int[] args = {1, 24, 21, 43, 12, 65, 34, 6, 23, 2, 765, 34};
+        sorter.sort(args);
     }
 
 

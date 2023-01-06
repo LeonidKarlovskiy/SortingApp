@@ -1,6 +1,9 @@
 package com.Leonid.SortingApp;
 
+
+
 import java.util.Arrays;
+
 
 public class Sorter {
 
@@ -23,10 +26,12 @@ public class Sorter {
     }
 
 
-    public int[] sorter(int[] array){
-        if (array == null) {
+    public int[] sort(int[] array){
+        if (array.length == 0) {
             throw new IllegalArgumentException("Cant be null");
-        } else {
+        }else if (array.length > 10) {
+            throw new IllegalArgumentException("more then 10 digits in command line");
+           }
             boolean isSorted = true;
             while (isSorted) {
                 isSorted = false;
@@ -40,7 +45,7 @@ public class Sorter {
                     }
                 }
             }
-        }
+
         return array;
     }
 

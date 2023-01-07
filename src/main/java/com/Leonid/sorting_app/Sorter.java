@@ -4,12 +4,25 @@ import org.apache.log4j.Logger;
 
 import java.util.Arrays;
 
+/**
+ * @author Leonid Karlovskiy
+ * @version 1.0
+ */
 public class Sorter {
     private static final Logger logger = Logger.getLogger(Sorter.class);
+
+
+    /**
+     * @param args - command line parameters
+     * @return sorted int[]
+     */
+
+
     public int[] convert(String[] args) {
         validator(args);
         return Arrays.stream(args).mapToInt(Integer::parseInt).sorted().toArray();
     }
+
     private void validator(String[] args) {
         if (args.length == 0) {
             logger.error("Empty argument line");

@@ -15,21 +15,31 @@ public class SorterToConvertTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void noElementsCaseInConvertMethod() {
+    public void noElementsCase() {
         String[] args = {};
         sorter.convert(args);
     }
 
     @Test
-    public void oneElementsCaseInConvertMethod() {
+    public void oneElementsCase() {
         String[] args = {"1"};
         int[] expectedArgs = {1};
         int[] result = sorter.convert(args);
         Assert.assertArrayEquals(expectedArgs, result);
     }
 
+    @Test
+    public void tenElementsCase() {
+        String[] args = {"28", "47", "53", "7", "13", "62", "64", "54", "85"};
+        int[] expectedArgs = {7, 13, 28, 47, 53, 54, 62, 64, 85};
+        int[] result = sorter.convert(args);
+        Assert.assertArrayEquals(expectedArgs, result);
+    }
+
+
+
     @Test(expected = IllegalArgumentException.class)
-    public void moreThenTenDigitsCaseInConvertMethod() {
+    public void moreThenTenDigitsCase() {
         String[] args = {"1", "24", "21", "43", "12", "65", "34", "6", "23", "2", "765", "34"};
         sorter.convert(args);
     }
